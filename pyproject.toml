@@ -1,0 +1,42 @@
+[project]
+name = "ai-news-researcher"
+version = "0.1.0"
+description = "Multi-agent system for AI-powered research using SmolAgents and OpenRouter"
+authors = [
+    {name = "Michael", email = "example@example.com"},
+]
+dependencies = [
+    "python-dotenv>=1.1.0",
+    "smolagents[openai]>=1.16.1",
+    "duckduckgo-search>=4.1.0",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = "MIT"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "mypy",
+    "flake8",
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
